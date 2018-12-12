@@ -12,8 +12,8 @@ class App extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>Simple To-do app</h1>
+      <div style={{width: '40%'}}>
+        <h1 style={{display: 'flex', justifyContent: 'center'}}>Simple To-do app</h1>
         <TodoList todos={this.state.todos}/>
       </div>
     );
