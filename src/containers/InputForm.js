@@ -5,6 +5,10 @@ class InputForm extends Component {
     content: ''
   }
 
+  changeValueHandler = event => {
+    this.setState({content: event.target.value})
+  }
+  
   render(){
     return (
       <div>
@@ -12,7 +16,8 @@ class InputForm extends Component {
           <input
             type='text'
             placeholder='What you have to do'
-            value={this.state.content} />
+            value={this.state.content} 
+            onClick={this.changeValueHandler}/>
         </form>
       </div>
     );
