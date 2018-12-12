@@ -8,11 +8,17 @@ class InputForm extends Component {
   changeValueHandler = event => {
     this.setState({content: event.target.value})
   }
-  
+
+  addValueHandler = event => {
+    event.preventDefault();
+    this.props.submitValue(this.state);
+    this.setState({content: ''});
+  }
+
   render(){
     return (
       <div>
-        <form>
+        <form onSubmit={this.addValueHandler}>
           <input
             type='text'
             placeholder='What you have to do'
