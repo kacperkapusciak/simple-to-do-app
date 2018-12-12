@@ -10,11 +10,20 @@ class App extends Component {
       {id: 3, content: "Learn maths for exam"}
     ]
   }
+
+  deleteHandler = id => {
+    const todos = this.state.todos.filter(todo => {
+      return (
+        id !== todo.id
+      );
+    });
+    this.setState({todos: todos});
+  }
   render() {
     return (
       <div style={{width: '40%'}}>
         <h1 style={{display: 'flex', justifyContent: 'center'}}>Simple To-do app</h1>
-        <TodoList todos={this.state.todos}/>
+        <TodoList todos={this.state.todos} delete={this.deleteHandler}/>
       </div>
     );
   }
