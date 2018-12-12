@@ -11,7 +11,10 @@ const TodoList = props => {
     props.todos.map(todo => {
       return (
         <div key={todo.id} >
-          <span style={TodoStyle}>{todo.content}</span>
+          <span style={TodoStyle} 
+                onClick={() => props.delete(todo.id)}>
+                {todo.content}
+          </span>
         </div>
       );
   })
