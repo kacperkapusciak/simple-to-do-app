@@ -23,7 +23,7 @@ class InputForm extends Component {
             type='text'
             placeholder='What you have to do'
             value={this.state.content} 
-            onClick={this.changeValueHandler}/>
+            onChange={this.changeValueHandler}/>
         </form>
       </div>
     );
