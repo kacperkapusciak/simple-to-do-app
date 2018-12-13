@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+
+import Center from '../styles/Center';
+import H1 from '../styles/H1';
+
 import TodoList from '../components/TodoList';
 import InputForm from './InputForm';
-import './App.css';
 
 class App extends Component {
   state = {
@@ -27,13 +30,15 @@ class App extends Component {
     this.setState({todos: todos});
   }
 
+  
+
   render() {
     return (
-      <div style={{width: '40%'}}>
-        <h1 style={{display: 'flex', justifyContent: 'center'}}>Simple To-do app</h1>
+      <Center>
+        <H1>Simple To-do app</H1>
         <InputForm submitValue={this.addHandler}/>
         <TodoList todos={this.state.todos} delete={this.deleteHandler}/>
-      </div>
+      </Center>
     );
   }
 }
