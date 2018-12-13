@@ -1,25 +1,19 @@
 import React from 'react';
-const TodoStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  margin: '20px',
-  padding: '10px',
-  border: '1px solid gray'
-}
+import TodoItem from '../styles/TodoItem';
+import Success from '../styles/Success';
 const TodoList = props => {
   const listOfTodos = props.todos.length ? (
     props.todos.map(todo => {
       return (
         <div key={todo.id} >
-          <span style={TodoStyle} 
-                onClick={() => props.delete(todo.id)}>
+          <TodoItem onClick={() => props.delete(todo.id)}>
                 {todo.content}
-          </span>
+          </TodoItem>
         </div>
       );
   })
   ) : (
-    <p>You've made all things that you had to do!</p>
+    <Success>You've made all things that you had to do!</Success>
   );
 
   return (

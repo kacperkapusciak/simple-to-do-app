@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Input from '../styles/Input';
 
 class InputForm extends Component {
   state = {
@@ -19,7 +20,7 @@ class InputForm extends Component {
     return (
       <div>
         <form onSubmit={this.addValueHandler}>
-          <input
+          <Input
             type='text'
             placeholder='What you have to do'
             value={this.state.content} 
