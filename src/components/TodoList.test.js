@@ -15,8 +15,7 @@ describe("<TodoList />", () => {
   });
 
   it("should display <Success> message when there are 0 todos", () => {
-    const todos = [];
-    const component = shallow(<TodoList todos={todos} />);
+    const component = shallow(<TodoList />);
     expect(component.find(Success).length).toEqual(1);
   });
 });
