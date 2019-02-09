@@ -16,11 +16,7 @@ class App extends Component {
   }
 
   deleteHandler = id => {
-    const todos = this.state.todos.filter(todo => {
-      return (
-        id !== todo.id
-      );
-    });
+    const todos = this.state.todos.filter(todo => id !== todo.id);
     this.setState({todos: todos});
   }
 
